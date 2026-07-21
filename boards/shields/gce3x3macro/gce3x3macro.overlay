@@ -4,6 +4,7 @@
     chosen {
         zmk,kscan = &composite_kscan;
         zmk,matrix-transform = &default_transform;
+        zmk,physical-layout = &macropad_physical_layout;
     };
 
     sensors {
