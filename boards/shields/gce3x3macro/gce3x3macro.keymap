@@ -1,5 +1,8 @@
 /*
  * gce3x3macro.keymap
+ *
+ * Seeed XIAO nRF52840
+ * 3x3 Macro Pad
  */
 
 #include <behaviors.dtsi>
@@ -13,44 +16,13 @@
             display-name = "Default";
 
             bindings = <
-                &kp N1      &kp N2      &kp N3
-                &kp N4      &kp N5      &kp N6
-                &kp N7      &kp N8      &kp N9
-                &mo 1
+                &kp N1   &kp N2   &kp N3
+                &kp N4   &kp N5   &kp N6
+                &kp N7   &kp N8   &kp N9
             >;
 
             sensor-bindings = <
                 &inc_dec_kp C_VOL_UP C_VOL_DN
-            >;
-        };
-
-        fn_layer {
-            display-name = "Function";
-
-            bindings = <
-                &kp F1      &kp F2      &kp F3
-                &kp F4      &kp F5      &kp F6
-                &kp F7      &kp F8      &kp F9
-                &to 0
-            >;
-
-            sensor-bindings = <
-                &inc_dec_kp PG_UP PG_DN
-            >;
-        };
-
-        bluetooth_layer {
-            display-name = "Bluetooth";
-
-            bindings = <
-                &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2
-                &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_CLR
-                &bt BT_NXT      &bt BT_PRV      &bootloader
-                &to 0
-            >;
-
-            sensor-bindings = <
-                &inc_dec_kp C_NEXT C_PREV
             >;
         };
     };
