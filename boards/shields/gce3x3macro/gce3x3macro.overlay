@@ -22,7 +22,7 @@
     matrix_kscan: matrix_kscan {
         compatible = "zmk,kscan-gpio-matrix";
 
-        diode-direction = "col2row";
+        diode-direction = "row2col";
 
         row-gpios = <
             &xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)
