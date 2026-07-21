@@ -1,0 +1,9 @@
+if SHIELD_GCE3X3MACRO
+
+config ZMK_KEYBOARD_NAME
+    default "3x3macro"
+
+config ZMK_SPLIT
+    default n
+
+endif # SHIELD_GCE3X3MACRO
