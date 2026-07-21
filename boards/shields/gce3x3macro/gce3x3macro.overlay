@@ -12,13 +12,12 @@
  *   B: D10
  *
  * Encoder Switch:
- *   D8 (direct GPIO)
+ *   D8
  */
 
 / {
     chosen {
-        zmk,kscan = &composite_kscan;
-        zmk,matrix-transform = &default_transform;
+        zmk,kscan = &matrix_kscan;
     };
 
     default_transform: matrix_transform {
@@ -40,9 +39,9 @@
         diode-direction = "col2row";
 
         row-gpios = <
-            &xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)
-            &xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)
-            &xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)
+            &xiao_d 3 GPIO_ACTIVE_LOW
+            &xiao_d 4 GPIO_ACTIVE_LOW
+            &xiao_d 5 GPIO_ACTIVE_LOW
         >;
 
         col-gpios = <
@@ -56,23 +55,16 @@
         compatible = "zmk,kscan-gpio-direct";
 
         input-gpios = <
-            &xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)
+            &xiao_d 8 GPIO_ACTIVE_LOW
         >;
     };
 
-    composite_kscan: composite_kscan {
-        compatible = "zmk,kscan-composite";
+    encoder: encoder {
+        compatible = "alps,ec11";
 
-        child-kscans = <
-            &matrix_kscan
-            &encoder_button
-        >;
+        a-gpios = <&xiao_d 9 GPIO_ACTIVE_HIGH>;
+        b-gpios = <&xiao_d 10 GPIO_ACTIVE_HIGH>;
+
+        steps = <4>;
     };
-};
-
-&ec11 {
-    status = "okay";
-
-    a-gpios = <&xiao_d 9 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
-    b-gpios = <&xiao_d 10 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
 };
