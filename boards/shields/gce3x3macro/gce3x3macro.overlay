@@ -15,12 +15,14 @@
  *   D8
  */
 
+ #include <dt-bindings/zmk/matrix_transform.h>
+
 / {
     chosen {
         zmk,kscan = &matrix_kscan;
     };
 
-    default_transform: matrix_transform {
+    default_transform: default_transform {
         compatible = "zmk,matrix-transform";
 
         rows = <3>;
