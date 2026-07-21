@@ -18,3 +18,14 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
+    with:
+      build_matrix: |
+        [
+          {
+            "board": "seeeduino_xiao_ble",
+            "shield": "gce3x3macro"
+          }
+        ]
