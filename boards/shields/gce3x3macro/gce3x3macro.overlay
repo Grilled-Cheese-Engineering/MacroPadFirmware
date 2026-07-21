@@ -3,6 +3,7 @@
 / {
     chosen {
         zmk,kscan = &matrix_kscan;
+        zmk,matrix-transform = &default_transform;
     };
 
     default_transform: matrix_transform {
