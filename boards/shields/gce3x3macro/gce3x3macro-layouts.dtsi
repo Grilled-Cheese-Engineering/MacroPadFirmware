@@ -1,23 +1,24 @@
 #include <physical_layouts.dtsi>
 
 / {
-    default_layout: default_layout {
-        compatible = "zmk,physical-layout";
+    macropad_physical_layout: macropad_physical_layout {
 
-        display-name = "Default Layout";
+        compatible = "zmk,physical-layout";
+        display-name = "Macro Pad";
 
         transform = <&default_transform>;
-        kscan = <&matrix_kscan>;
-
-        keys =
-            <&key_physical_attrs 100 100   0   0 0 0 0>,
-            <&key_physical_attrs 100 100 100   0 0 0 0>,
-            <&key_physical_attrs 100 100 200   0 0 0 0>,
-            <&key_physical_attrs 100 100   0 100 0 0 0>,
-            <&key_physical_attrs 100 100 100 100 0 0 0>,
-            <&key_physical_attrs 100 100 200 100 0 0 0>,
-            <&key_physical_attrs 100 100   0 200 0 0 0>,
-            <&key_physical_attrs 100 100 100 200 0 0 0>,
-            <&key_physical_attrs 100 100 200 200 0 0 0>;
+        kscan = <&kscan0>;
+        keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100    0    0       0     0     0>
+            , <&key_physical_attrs 100 100  100    0       0     0     0>
+            , <&key_physical_attrs 100 100  200    0       0     0     0>
+            , <&key_physical_attrs 100 100    0  100       0     0     0>
+            , <&key_physical_attrs 100 100  100  100       0     0     0>
+            , <&key_physical_attrs 100 100  200  100       0     0     0>
+            , <&key_physical_attrs 100 100    0  200       0     0     0>
+            , <&key_physical_attrs 100 100  100  200       0     0     0>
+            , <&key_physical_attrs 100 100  200  200       0     0     0>
+            , <&key_physical_attrs 100 100  400  100       0     0     0>
+            ;
     };
 };
