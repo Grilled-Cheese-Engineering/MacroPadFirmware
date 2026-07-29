@@ -1,6 +1,31 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
 
 / {
+    /* Define the physical layout for ZMK Studio */
+    macropad_physical_layout: macropad_physical_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        kscan = <&composite_kscan>;
+        transform = <&default_transform>;
+        keys
+            /* Row 1 (Top) */
+            = <&key_physical_attrs 100 100 0 0 0 0 0>
+            , <&key_physical_attrs 100 100 100 0 0 0 0>
+            , <&key_physical_attrs 100 100 200 0 0 0 0>
+            /* Row 2 (Middle) */
+            , <&key_physical_attrs 100 100 0 100 0 0 0>
+            , <&key_physical_attrs 100 100 100 100 0 0 0>
+            , <&key_physical_attrs 100 100 200 100 0 0 0>
+            /* Row 3 (Bottom) */
+            , <&key_physical_attrs 100 100 0 200 0 0 0>
+            , <&key_physical_attrs 100 100 100 200 0 0 0>
+            , <&key_physical_attrs 100 100 200 200 0 0 0>
+            /* Encoder Button (Placed centered below the grid) */
+            , <&key_physical_attrs 100 100 100 325 0 0 0>
+            ;
+    };
+
     chosen {
         zmk,kscan = &composite_kscan;
         zmk,matrix-transform = &default_transform;
@@ -54,7 +79,6 @@
             kscan = <&kscan2>;
             row-offset = <3>;
         };
-
     };
 
     kscan1: kscan_matrix {
